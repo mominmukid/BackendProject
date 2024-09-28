@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="/stylesheet/style.css">
+   <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-gray-800 text-white">
+   <h1 class="text-4xl font-bold text-center ">Hello from second project</h1>
+      <div class="flex flex-col justify-start w-full items-center h-screen">
+         <div class="bg-gray-700 p-4 rounded-md w-[50%]">
+            <h2 class="text-2xl font-bold text-cente">Your task maneger</h2>
+            <form action="/create" method="post" class="w-full mt-4">
+               <div class="mb-4 w-full flex flex-col gap-2 items-center justify-center">
+                  <label for="username" class="block text-sm font-bold mb-2">task title</label>
+                  <input type="text" id="user" name="title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 w-full leading-light focus:outline-none focus:shadow-outline" placeholder="here task title">
+                  <label for="username" class="block text-sm font-bold mb-2">task description</label>
+                  <input type="text" id="username" name="delails" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 w-full leading-light focus:outline-none focus:shadow-outline" placeholder="here task description">
+                  <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-2 rounded">Add task</button>
+               </div>
+            </form>
+         </div>
+
+         <div class=" w-full bg-gray-700 p-4 flex flex-wrap gap-2 rounded-md p-4 mt-4 w-[50%]">
+               <% if(files.length > 0) {%>
+                     
+               <% files.forEach((file) => { %>
+
+                  <div class=" flex p-4 flex-col justify-start min-w-[25%] border-2 border-gray-100 rounded-md items-center h-fit">
+                     <h2 class="text-2xl font-bold text-cente "><%= file %></h2>
+
+                    <div class="w-full flex justify-between gap-4 items-center"> <a href="/file/<%= file %>" class="text-blue-500 underline ">read more</a>
+                     <a href="/edit/<%=file%>" class="text-green-500  ">Edit filename</a>
+                  </div>
+                  </div>
+
+               <% }) %>
+
+               <%} else {%>
+                  <h1 class="text-2xl font-bold text-center">NO TASK FOUND</h1>
+                  <%}%>
+
+           
+         </div>
+      </div>
+
+   <script src="/javascripts/script.js"></script>
+</body>
+</html>

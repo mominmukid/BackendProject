@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-800 text-white">
+   <h1 class="text-2xl font-bold">Edit</h1>
+  <div class="flex justify-center items-center">
+    <form action="/edit" method="post" class="bg-gray-700 p-4 rounded-md flex flex-col gap-4">
+      <input type="text" name="previousName" placeholder="Previous Name" value="<%= filename %>" class="bg-gray-600 p-2 rounded-md " readonly>
+      <input type="text" name="newName" placeholder="New Name" class="bg-gray-600 p-2 rounded-md">
+      <button type="submit" class="bg-yellow-500 text-white px-4 py-2 rounded-md hover:bg-yellow-600">Save</button>
+    </form>
+  </div>
+</body>
+</html>
